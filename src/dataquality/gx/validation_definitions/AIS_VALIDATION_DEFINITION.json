@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "1a714399-1994-4b97-9358-0b7e6b6465d3",
+      "name": "AIS_DATA_ASSET"
+    },
+    "batch_definition": {
+      "id": "abcf1d74-f189-412c-aced-7dd068490935",
+      "name": "test"
+    },
+    "datasource": {
+      "id": "1ad67e6b-a484-4a85-b7cc-7ef32876b4c4",
+      "name": "AIS_DATA_SOURCE"
+    }
+  },
+  "id": "5ced4475-fb0b-498a-9969-e997c1dc0f1a",
+  "name": "AIS_VALIDATION_DEFINITION",
+  "suite": {
+    "id": "afd19010-84e9-4ac4-b3d2-719b17c9019f",
+    "name": "AIS_EXPECTATION_SUITE"
+  }
+}

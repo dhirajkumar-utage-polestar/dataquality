@@ -1,0 +1,21 @@
+file_validation:
+  - name: ValidateFileFormat
+    description: Ensure the file format is allowed
+    allowed_extensions:
+      - .csv
+      - .json
+      - .parquet
+
+  - name: ValidateFileSize
+    description: Ensure the file size does not exceed the specified limit
+    max_size_mb: 100  # Maximum size in MB
+
+  - name: ValidateCompressed
+    description: Ensure the file is compressed (zip or gzip)
+    allowed_compressions:
+      - zip
+      - gz
+
+  - name: ValidateFileDate
+    description: Ensure the file's modification date matches the business date
+    business_date: "2025-03-21"  # The business date to match

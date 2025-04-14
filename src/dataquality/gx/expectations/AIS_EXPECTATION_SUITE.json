@@ -1,0 +1,28 @@
+{
+  "expectations": [
+    {
+      "id": "df7f0737-667f-4541-b7bb-11a43aeee5be",
+      "kwargs": {
+        "column": "ReceivedTimestamp",
+        "type_": "int64"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_be_of_type"
+    },
+    {
+      "id": "0df01622-f24d-4922-9508-ba70ded775cc",
+      "kwargs": {
+        "column": "MessageType",
+        "type_": "int64"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_be_of_type"
+    }
+  ],
+  "id": "0dc91090-4d57-4a60-9581-ddbe3465bb8e",
+  "meta": {
+    "great_expectations_version": "1.3.13"
+  },
+  "name": "AIS_EXPECTATION_SUITE",
+  "notes": null
+}

@@ -1,0 +1,124 @@
+expectation_mapping:
+  ExpectColumnValuesToBeNull:
+    class: ExpectColumnValuesToBeNull
+    description: "Expect that all values in the column are null."
+
+  ExpectColumnValuesToNotBeNull:
+    class: ExpectColumnValuesToNotBeNull
+    description: "Expect that no values in the column are null."
+
+  ExpectColumnValuesToBeOfType:
+    class: ExpectColumnValuesToBeOfType
+    description: "Expect that all values in the column are of the specified type."
+
+  ExpectColumnValuesToBeInSet:
+    class: ExpectColumnValuesToBeInSet
+    description: "Expect that all values in the column are in the provided set of values."
+
+  ExpectColumnValuesToMatchRegex:
+    class: ExpectColumnValuesToMatchRegex
+    description: "Expect that all values in the column match the provided regular expression."
+
+  ExpectColumnValuesToMatchLikePattern:
+    class: ExpectColumnValuesToMatchLikePattern
+    description: "Expect that all values in the column match the provided pattern."
+
+  ExpectColumnPairValuesToBeEqual:
+    class: ExpectColumnPairValuesToBeEqual
+    description: "Expect that two columns have equal values in corresponding rows."
+
+  ExpectColumnPairValuesToBeInSet:
+    class: ExpectColumnPairValuesToBeInSet
+    description: "Expect that two columns have values that are in a specified set in corresponding rows."
+
+  ExpectColumnValueLengthsToBeBetween:
+    class: ExpectColumnValueLengthsToBeBetween
+    description: "Expect that the length of each value in the column falls within the specified range."
+
+  ExpectColumnValueLengthsToEqual:
+    class: ExpectColumnValueLengthsToEqual
+    description: "Expect that the length of each value in the column is exactly equal to a specified value."
+
+  ExpectColumnMostCommonValueToBeInSet:
+    class: ExpectColumnMostCommonValueToBeInSet
+    description: "Expect that the most common value in the column is in the provided set of values."
+
+  ExpectColumnValuesToNotBeInSet:
+    class: ExpectColumnValuesToNotBeInSet
+    description: "Expect that no values in the column are in the provided set."
+
+  ExpectColumnValuesToMatchRegexList:
+    class: ExpectColumnValuesToMatchRegexList
+    description: "Expect that all values in the column match one of the provided regular expressions."
+
+  ExpectTableRowCountToBeBetween:
+    class: ExpectTableRowCountToBeBetween
+    description: "Expect the total row count of the table to be between the specified values."
+
+  ExpectTableRowCountToEqual:
+    class: ExpectTableRowCountToEqual
+    description: "Expect the total row count of the table to be exactly equal to the specified value."
+
+  ExpectColumnMaxToBeBetween:
+    class: ExpectColumnMaxToBeBetween
+    description: "Expect that the maximum value in the column is between the specified values."
+
+  ExpectColumnMinToBeBetween:
+    class: ExpectColumnMinToBeBetween
+    description: "Expect that the minimum value in the column is between the specified values."
+
+  ExpectColumnMeanToBeBetween:
+    class: ExpectColumnMeanToBeBetween
+    description: "Expect that the mean value of the column is between the specified values."
+
+  ExpectColumnMedianToBeBetween:
+    class: ExpectColumnMedianToBeBetween
+    description: "Expect that the median value of the column is between the specified values."
+
+  ExpectColumnStdevToBeBetween:
+    class: ExpectColumnStdevToBeBetween
+    description: "Expect that the standard deviation of values in the column is between the specified values."
+
+  ExpectColumnSumToBeBetween:
+    class: ExpectColumnSumToBeBetween
+    description: "Expect that the sum of the column values is between the specified values."
+
+  ExpectColumnQuantileValuesToBeBetween:
+    class: ExpectColumnQuantileValuesToBeBetween
+    description: "Expect that the specified quantiles of the column values are between the specified values."
+
+  ExpectColumnValueZScoresToBeLessThan:
+    class: ExpectColumnValueZScoresToBeLessThan
+    description: "Expect that the Z-scores of the values in the column are all less than the specified value."
+
+  ExpectColumnValuesToBeUnique:
+    class: ExpectColumnValuesToBeUnique
+    description: "Expect that all values in the column are unique (no duplicates)."
+
+  ExpectColumnProportionOfUniqueValuesToBeBetween:
+    class: ExpectColumnProportionOfUniqueValuesToBeBetween
+    description: "Expect that the proportion of unique values in the column is between the specified values."
+
+  ExpectColumnDistinctValuesToContainSet:
+    class: ExpectColumnDistinctValuesToContainSet
+    description: "Expect that the distinct values in the column contain all the values in the provided set."
+
+  ExpectColumnDistinctValuesToEqualSet:
+    class: ExpectColumnDistinctValuesToEqualSet
+    description: "Expect that the distinct values in the column exactly match the provided set."
+
+  ExpectColumnDistinctValuesToBeInSet:
+    class: ExpectColumnDistinctValuesToBeInSet
+    description: "Expect that the distinct values in the column are all in the provided set."
+
+  ExpectMulticolumnSumToEqual:
+    class: ExpectMulticolumnSumToEqual
+    description: "Expect that the sum of two or more columns is equal to the specified value."
+
+  ExpectCompoundColumnsToBeUnique:
+    class: ExpectCompoundColumnsToBeUnique
+    description: "Expect that the combination of two or more columns is unique across the rows."
+
+  ExpectSelectColumnValuesToBeUniqueWithinRecord:
+    class: ExpectSelectColumnValuesToBeUniqueWithinRecord
+    description: "Expect that values from selected columns are unique within each record."

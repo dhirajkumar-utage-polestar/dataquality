@@ -1,0 +1,5 @@
+success,expectation_config_type,expectation_config_kwargs_batch_id,expectation_config_kwargs_column,expectation_config_kwargs_type_,expectation_config_id,result_observed_value,exception_info_raised_exception,exception_info_exception_traceback,exception_info_exception_message
+True,expect_column_values_to_be_of_type,AIS_source-AIS_asset,ReceivedTimestamp,int64,30e2ccc1-0005-44ff-ac1a-85efcb082e7f,int64,False,,
+True,expect_column_values_to_be_of_type,AIS_source-AIS_asset,ProcessedTimestamp,int64,4c054bb4-c9a9-41e9-86ad-fa189b346e7d,int64,False,,
+,,,,,,,,,
+,,,,,,,,,

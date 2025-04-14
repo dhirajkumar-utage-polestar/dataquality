@@ -1,0 +1,23 @@
+{
+  "actions": [
+    {
+      "name": "update_pole_star_data_quality",
+      "site_names": [
+        "pole_star_data_quality"
+      ],
+      "type": "update_data_docs"
+    }
+  ],
+  "id": "7bd8be9f-7629-4e62-a9c0-6c6bee6025c6",
+  "name": "AIS_CHECKPOINT",
+  "result_format": {
+    "result_format": "COMPLETE",
+    "unexpected_index_column_names": []
+  },
+  "validation_definitions": [
+    {
+      "id": "5ced4475-fb0b-498a-9969-e997c1dc0f1a",
+      "name": "AIS_VALIDATION_DEFINITION"
+    }
+  ]
+}

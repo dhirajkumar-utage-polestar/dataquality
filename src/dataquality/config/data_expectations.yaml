@@ -1,0 +1,248 @@
+# data_expectations.yaml
+
+expectations:
+  # Completeness: Checks if the values in a column are NULL or NOT NULL
+  completeness:
+    - name: ExpectColumnValuesToBeNull
+      column: <column_name>  # Specify the column name for null value check
+
+    - name: ExpectColumnValuesToNotBeNull
+      column: <column_name>  # Specify the column name for non-null value check
+
+  # Schema: Checks for column existence, data type validation, and column count in the table
+  schema:
+    - name: ExpectColumnToExist
+      column: <column_name>  # Specify the column name to check if it exists
+
+    - name: ExpectColumnValuesToBeOfType
+      column: <column_name>  # Specify the column name to check its type
+      type: <data_type>  # Data type (e.g., 'str', 'int', 'float', etc.)
+
+    - name: ExpectColumnValuesToBeInTypeList
+      column: <column_name>  # Specify the column name to check if it matches types from the list
+      types: # List of acceptable types
+        - <type1>
+        - <type2>
+        - <type3>
+
+    - name: ExpectTableColumnCountToBeBetween
+      min: <min_columns>  # Minimum number of columns
+      max: <max_columns>  # Maximum number of columns
+
+    - name: ExpectTableColumnsToMatchOrderedList
+      columns: # List of columns in the correct order
+        - <column_name1>
+        - <column_name2>
+        - <column_name3>
+
+    - name: ExpectTableColumnsToMatchSet
+      columns: # Set of column names (unordered)
+        - <column_name1>
+        - <column_name2>
+        - <column_name3>
+
+  # Uniqueness: Checks if values in a column are unique or distinct within a set
+  uniqueness:
+    - name: ExpectColumnDistinctValuesToBeInSet
+      column: <column_name>  # Specify the column name
+      values: # Specify a set of values that the distinct values in the column should match
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectColumnDistinctValuesToContainSet
+      column: <column_name>  # Specify the column name
+      values: # Set of distinct values the column should contain
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectColumnDistinctValuesToEqualSet
+      column: <column_name>  # Specify the column name
+      values: # Set of exact values the column should contain
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectColumnProportionOfUniqueValuesToBeBetween
+      column: <column_name>  # Specify the column name
+      min: <min_percentage>  # Minimum proportion of unique values (between 0 and 1)
+      max: <max_percentage>  # Maximum proportion of unique values (between 0 and 1)
+
+    - name: ExpectColumnUniqueValueCountToBeBetween
+      column: <column_name>  # Specify the column name
+      min: <min_count>  # Minimum count of unique values
+      max: <max_count>  # Maximum count of unique values
+
+    - name: ExpectColumnValuesToBeUnique
+      column: <column_name>  # Specify the column name
+
+    - name: ExpectCompoundColumnsToBeUnique
+      columns: # Specify compound columns for uniqueness check
+        - <column_name1>
+        - <column_name2>
+        - <column_name3>
+
+    - name: ExpectSelectColumnValuesToBeUniqueWithinRecord
+      columns: # Specify compound columns for uniqueness check within a single record
+        - <column_name1>
+        - <column_name2>
+
+  # Validity: Checks if the values in a column satisfy certain conditions or match regex
+  validity:
+    - name: ExpectColumnMostCommonValueToBeInSet
+      column: <column_name>  # Specify the column name
+      values: # Set of acceptable most common values
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectColumnPairValuesToBeEqual
+      column_A: <column_name_A>  # Column A for comparison
+      column_B: <column_name_B>  # Column B for comparison
+
+    - name: ExpectColumnPairValuesToBeInSet
+      column_A: <column_name_A>  # Column A for comparison
+      column_B: <column_name_B>  # Column B for comparison
+      values: # Set of acceptable values
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectColumnValueLengthsToBeBetween
+      column: <column_name>  # Specify the column name
+      min: <min_length>  # Minimum length of values
+      max: <max_length>  # Maximum length of values
+
+    - name: ExpectColumnValueLengthsToEqual
+      column: <column_name>  # Specify the column name
+      length: <exact_length>  # Exact length of values
+
+    - name: ExpectColumnValuesToBeInSet
+      column: <column_name>  # Specify the column name
+      values: # Set of acceptable values
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectColumnValuesToMatchRegex
+      column: <column_name>  # Specify the column name
+      regex: <regex_pattern>  # Regex pattern for validation
+
+    - name: ExpectColumnValuesToMatchRegexList
+      column: <column_name>  # Specify the column name
+      regex_list: # List of regex patterns
+        - <regex_pattern1>
+        - <regex_pattern2>
+
+    - name: ExpectColumnValuesToNotBeInSet
+      column: <column_name>  # Specify the column name
+      values: # Set of values that should not exist in the column
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectColumnValuesToNotMatchRegex
+      column: <column_name>  # Specify the column name
+      regex: <regex_pattern>  # Regex pattern for non-matching validation
+
+    - name: ExpectColumnValuesToNotMatchRegexList
+      column: <column_name>  # Specify the column name
+      regex_list: # List of regex patterns for non-matching validation
+        - <regex_pattern1>
+        - <regex_pattern2>
+
+  # Volume: Checks the row count of the table
+  volume:
+    - name: ExpectTableRowCountToBeBetween
+      min: <min_rows>  # Minimum number of rows
+      max: <max_rows>  # Maximum number of rows
+
+    - name: ExpectTableRowCountToEqual
+      count: <exact_row_count>  # Exact number of rows
+
+  # Numeric: Checks numeric values for ranges, standard deviations, and statistics
+  numeric:
+    - name: ExpectColumnKLDivergenceToBeLessThan
+      column: <column_name>  # Specify the column name
+      value: <threshold_value>  # Threshold value for the divergence
+
+    - name: ExpectColumnMaxToBeBetween
+      column: <column_name>  # Specify the column name
+      min_value: <min_value>  # Minimum acceptable value
+      max_value: <max_value>  # Maximum acceptable value
+
+    - name: ExpectColumnMeanToBeBetween
+      column: <column_name>  # Specify the column name
+      min_value: <min_value>  # Minimum acceptable mean
+      max_value: <max_value>  # Maximum acceptable mean
+
+    - name: ExpectColumnMedianToBeBetween
+      column: <column_name>  # Specify the column name
+      min_value: <min_value>  # Minimum acceptable median
+      max_value: <max_value>  # Maximum acceptable median
+
+    - name: ExpectColumnMinToBeBetween
+      column: <column_name>  # Specify the column name
+      min_value: <min_value>  # Minimum acceptable value
+      max_value: <max_value>  # Maximum acceptable value
+
+    - name: ExpectColumnMostCommonValueToBeInSet
+      column: <column_name>  # Specify the column name
+      values: # Set of acceptable most common values
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectColumnPairValuesAToBeGreaterThanB
+      column_A: <column_name_A>  # Column A for comparison
+      column_B: <column_name_B>  # Column B for comparison
+
+    - name: ExpectColumnPairValuesToBeEqual
+      column_A: <column_name_A>  # Column A for comparison
+      column_B: <column_name_B>  # Column B for comparison
+
+    - name: ExpectColumnQuantileValuesToBeBetween
+      column: <column_name>  # Specify the column name
+      min_value: <min_quantile>  # Minimum quantile value
+      max_value: <max_quantile>  # Maximum quantile value
+
+    - name: ExpectColumnStdevToBeBetween
+      column: <column_name>  # Specify the column name
+      min_value: <min_stdev>  # Minimum acceptable standard deviation
+      max_value: <max_stdev>  # Maximum acceptable standard deviation
+
+    - name: ExpectColumnSumToBeBetween
+      column: <column_name>  # Specify the column name
+      min_value: <min_sum>  # Minimum acceptable sum
+      max_value: <max_sum>  # Maximum acceptable sum
+
+    - name: ExpectColumnValueZScoresToBeLessThan
+      column: <column_name>  # Specify the column name
+      value: <threshold_value>  # Z-score threshold
+
+    - name: ExpectColumnValuesToBeBetween
+      column: <column_name>  # Specify the column name
+      min_value: <min_value>  # Minimum acceptable value
+      max_value: <max_value>  # Maximum acceptable value
+
+    - name: ExpectColumnValuesToBeInSet
+      column: <column_name>  # Specify the column name
+      values: # Set of acceptable values
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectColumnValuesToNotBeInSet
+      column: <column_name>  # Specify the column name
+      values: # Set of values that should not exist
+        - <value1>
+        - <value2>
+        - <value3>
+
+    - name: ExpectMulticolumnSumToEqual
+      columns: # Columns involved in the summation
+        - <column_name1>
+        - <column_name2>
+        - <column_name3>
+      value: <expected_sum>  # The expected sum of the columns

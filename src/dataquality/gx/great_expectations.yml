@@ -1,0 +1,86 @@
+config_version: 4.0
+
+
+config_variables_file_path: uncommitted/config_variables.yml
+
+plugins_directory: plugins/
+
+stores:
+  expectations_store:
+    class_name: ExpectationsStore
+    store_backend:
+      class_name: TupleS3StoreBackend
+      bucket: ps-test-data-platform-extracts
+      prefix: dataquality/expectations/
+  #      boto3_options:
+  #        aws_access_key_id: ${AWS_ACCESS_KEY_ID}
+  #        aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+  #        region_name: ${AWS_DEFAULT_REGION}
+
+  validation_results_store:
+    class_name: ValidationResultsStore
+    store_backend:
+      class_name: TupleS3StoreBackend
+      bucket: ps-test-data-platform-extracts
+      prefix: dataquality/uncommitted/validations/
+  #      boto3_options:
+  #        aws_access_key_id: ${AWS_ACCESS_KEY_ID}
+  #        aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+  #        region_name: ${AWS_DEFAULT_REGION}
+
+  checkpoint_store:
+    class_name: CheckpointStore
+    store_backend:
+      class_name: TupleS3StoreBackend
+      suppress_store_backend_id: true
+      bucket: ps-test-data-platform-extracts
+      prefix: dataquality/checkpoints/
+  #      boto3_options:
+  #        aws_access_key_id: ${AWS_ACCESS_KEY_ID}
+  #        aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+  #        region_name: ${AWS_DEFAULT_REGION}
+
+  validation_definition_store:
+    class_name: ValidationDefinitionStore
+    store_backend:
+      class_name: TupleS3StoreBackend
+      bucket: ps-test-data-platform-extracts
+      prefix: dataquality/validation_definitions/
+#      boto3_options:
+#        aws_access_key_id: ${AWS_ACCESS_KEY_ID}
+#        aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+#        region_name: ${AWS_DEFAULT_REGION}
+
+expectations_store_name: expectations_store
+validation_results_store_name: validation_results_store
+checkpoint_store_name: checkpoint_store
+
+data_docs_sites:
+  pole_star:
+    class_name: SiteBuilder
+    site_index_builder:
+      class_name: DefaultSiteIndexBuilder
+    store_backend:
+      class_name: TupleS3StoreBackend
+      bucket: data-docs-polestar
+#      prefix: dataquality/data_docs/
+#      boto3_options:
+#        aws_access_key_id: ${AWS_ACCESS_KEY_ID}
+#        aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+#        region_name: ${AWS_DEFAULT_REGION}
+
+fluent_datasources:
+  ttt_DHIRAJ_DATA_SOURCE:
+    type: pandas
+    id: 9acfc2a6-ab7a-4e0d-9ab0-d94defaa11db
+    assets:
+      ttt_DHIRAJ_DATA_ASSET:
+        type: dataframe
+        id: fcecfce6-18e7-424e-918f-c74df18d9a6f
+        batch_metadata: { }
+        batch_definitions:
+          test:
+            id: f55b35fb-6eb3-47ab-8b7e-058018774e5b
+            partitioner:
+analytics_enabled:
+data_context_id: 06d6b705-0524-4881-8167-6a216cc4bf2d

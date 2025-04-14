@@ -1,0 +1,138 @@
+
+----------------------------------------------------------------------------------
+                                    Value-Related Checks
+----------------------------------------------------------------------------------
+
+expect_column_values_to_be_null: Checks if all values in a column are null.
+expect_column_values_to_be_unique: Verifies that all values in a column are unique.
+expect_column_pair_values_to_be_in_set: Confirms that paired values from two columns belong to a set of valid pairs.
+expect_column_values_to_match_regex: Checks if column values match a given regular expression.
+expect_column_values_to_match_json_schema: Verifies if column values match a JSON schema.
+----------------------------------------------------------------------------------
+                                    OTHER CHECKS
+----------------------------------------------------------------------------------
+expect_column_mean_to_be_between: Checks if the mean of a column's values falls within a specified range.
+expect_column_median_to_be_between: Checks if the median of a column's values falls within a specified range.
+expect_column_sum_to_be_between: Checks if the sum of a column's values falls within a specified range.
+expect_column_distinct_values_to_be_in_set: Checks if the distinct values in a column are all contained within a given se
+----------------------------------------------------------------------------------
+                                    SCHEMA RELATED
+----------------------------------------------------------------------------------
+1 >Data Type checks ?
+string
+float
+Number
+boolean
+array
+Date/timestamp validation
+
+2 >Length Checks -
+
+
+3> Referretial intergraity
+
+                                !!! avaiable  ones !!!
+expect_column_to_exist: Verifies that a specified column exists in a table.
+expect_table_column_count_to_be_between: Checks if the number of columns in a table falls within a specified range.
+expect_column_values_to_be_in_type_list: Confirms that a column's values belong to a list of specified data types.
+expect_column_values_to_be_of_type: Ensures that a column's values are of a particular data type.
+
+-------------------------------------------------------------------------------
+                                        File Validation
+-------------------------------------------------------------------------------
+
+File Format: Ensure only the expected file formats are included.
+Compression: Ensure files are correctly compressed and their integrity is verified.
+File Size: Skip files that are too large or compress them before proceeding.
+Empty Files: Skip any empty files.
+File Date: Ensure the modification date matches the business date.
+
+
+
+----------------------------------------------------------------------------------------------------------------
+                                    On failure OR Success
+----------------------------------------------------------------------------------------------------------------
+
+If file check fails -
+
+   ABORT -- Job failure
+   SKIP  -- Skip the current file and continure with remaining ones
+
+if validation fails
+    SKIP the record
+    ABORT - Job failure
+    REPLACE with Default -- Data Correction?
+
+----------------------------------------------------------------
+                                        OUTPUT
+---------------------------------------------------------------
+VALIDATION Output Save(Result , Bad Records File ) and Notification setup(Email - Slack ) ?
+
+
+Input ---
+Pandas
+Pyspark
+OLTP - DB
+
+-------
+completeness :-
+ExpectColumnValuesToBeNull
+ExpectColumnValuesToNotBeNull
+
+Schema-
+ExpectColumnToExist
+ExpectColumnValuesToBeOfType
+ExpectColumnValuesToBeInTypeList
+ExpectTableColumnCountToBeBetween
+ExpectTableColumnsToMatchOrderedList
+ExpectTableColumnsToMatchSet
+
+Uniquness
+ExpectColumnDistinctValuesToBeInSet
+ExpectColumnDistinctValuesToContainSet
+ExpectColumnDistinctValuesToEqualSet
+ExpectColumnProportionOfUniqueValuesToBeBetween
+ExpectColumnUniqueValueCountToBeBetween
+ExpectColumnValuesToBeUnique
+ExpectCompoundColumnsToBeUnique
+ExpectSelectColumnValuesToBeUniqueWithinRecord
+
+
+Validatiy
+ExpectColumnMostCommonValueToBeInSet
+ExpectColumnPairValuesToBeEqual
+ExpectColumnPairValuesToBeInSet
+ExpectColumnValueLengthsToBeBetween
+ExpectColumnValueLengthsToEqual
+ExpectColumnValuesToBeInSet
+ExpectColumnValuesToMatchRegex
+ExpectColumnValuesToMatchRegexList
+ExpectColumnValuesToNotBeInSet
+ExpectColumnValuesToNotMatchRegex
+ExpectColumnValuesToNotMatchRegexList
+
+Volume
+ExpectTableRowCountToBeBetween
+ExpectTableRowCountToEqual
+
+Numeric
+ExpectColumnKLDivergenceToBeLessThan
+ExpectColumnMaxToBeBetween
+ExpectColumnMeanToBeBetween
+ExpectColumnMedianToBeBetween
+ExpectColumnMinToBeBetween
+ExpectColumnMostCommonValueToBeInSet
+ExpectColumnPairValuesAToBeGreaterThanB
+ExpectColumnPairValuesToBeEqual
+ExpectColumnQuantileValuesToBeBetween
+ExpectColumnStdevToBeBetween
+ExpectColumnSumToBeBetween
+ExpectColumnValueZScoresToBeLessThan
+ExpectColumnValuesToBeBetween
+ExpectColumnValuesToBeInSet
+ExpectColumnValuesToNotBeInSet
+ExpectMulticolumnSumToEqual
+
+
+Whole Schema
+expect_column_values_to_match_json_schema
